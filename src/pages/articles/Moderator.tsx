@@ -7,7 +7,7 @@ import ColumnDropdown from "./ColumnDropdown";
 import styles from "./ModeratorView.module.scss";
 
 interface ArticlesInterface {
-  id: string;
+  _id: object,
   title: string;
   authors: string;
   source: string;
@@ -32,7 +32,7 @@ const Articles: NextPage<ArticlesProps> = ({ articles }) => {
   const [activeTab, setActiveTab] = useState('submitted');
 
   const [selectedColumns, setSelectedColumns] = useState<string[]>([
-    "id", "title", "authors", "source", "publication_year",
+    "_id", "title", "authors", "source", "publication_year",
     "doi", "SE_practice", "claim", "evidence", "approved", "rejected"
   ]);
 
