@@ -24,10 +24,7 @@ const ModeratorSortableTable: React.FC<SortableTableProps> = ({
   const [expandedRowIndex, setExpandedRowIndex] = useState<number | null>(null);
 
 const refreshData =async () => {
-  const response = await axios.get(
-    "https://speed-1-backend-chi.vercel.app/articles"
-  );
-  data = response.data as ArticlesInterface[];
+  location.reload();
 }
   
 
@@ -43,7 +40,7 @@ const handleApprove = async (index: number) => {
     );
     // Log the response for debugging
     console.log('Approve Response:', response);
-    alert("Approved, refreshing data...")
+    window.alert("Approved, refreshing data...")
     // Update the article in the state with the data returned by the server
     await refreshData();
     setExpandedRowIndex(null);
@@ -65,7 +62,7 @@ const handleReject = async (index: number) => {
     // Log the response for debugging
     console.log('Reject Response:', response);
     // Update the article in the state with the data returned by the server
-    alert("Rejected, refreshing data...")
+    window.alert("Rejected, refreshing data...")
     await refreshData();
     setExpandedRowIndex(null);
   } catch (error) {
