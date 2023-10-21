@@ -6,7 +6,7 @@ import axios from "axios";
 import ColumnDropdown from "./ColumnDropdown";
 import styles from "./ModeratorView.module.scss";
 
-interface ArticlesInterface {
+export interface ArticlesInterface {
   _id: object,
   title: string;
   authors: string;
