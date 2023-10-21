@@ -44,7 +44,7 @@ const handleApprove = async (index: number) => {
     // Log the response for debugging
     console.log('Approve Response:', response);
     // Update the article in the state with the data returned by the server
-    data[index] = response.data;
+    await refreshData();
     setExpandedRowIndex(null);
   } catch (error) {
     // Log the error for debugging
@@ -64,7 +64,7 @@ const handleReject = async (index: number) => {
     // Log the response for debugging
     console.log('Reject Response:', response);
     // Update the article in the state with the data returned by the server
-    data[index] = response.data;
+    await refreshData();
     setExpandedRowIndex(null);
   } catch (error) {
     // Log the error for debugging
