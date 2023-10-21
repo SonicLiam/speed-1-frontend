@@ -32,7 +32,7 @@ const SortableTable: React.FC<SortableTableProps> = ({ headers, data }) => {
     try {
       // Send a POST request to the server to rate the article
       const response = await axios.post( 
-        `https://speed-1-backend-o3zc1j3ps-notreallybenjamins-projects.vercel.app/api/articles/rate?_id=${article._id}`,
+        `speed-1-backend-chi/api/articles/rate?_id=${article._id}`,
         { "rating": rating }
       );
       // Log the response for debugging
